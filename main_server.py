@@ -21,21 +21,20 @@ Copyright 2019 Lummetry.AI (Knowledge Investment Group SRL). All Rights Reserved
 
 """
 
-import numpy as np
-import pandas as pd
 from bokeh.io import curdoc
-from app.frontend import get_layout
+from app.frontend import FrontEnd
 
 from libraries_pub.logger import Logger
 
 l = Logger(
   lib_name='CXI',
-  base_folder='.',
-  app_folder='_local_cache',
+  config_file='_config/config.txt',
   TF_KERAS=False,
+  use_colors=False,
   )
 
-app_layout, ds = get_layout(l)
+eng = FrontEnd(log=l, debug=False)
+app_layout = eng.get_layout()
 
 curdoc().add_root(app_layout)
 curdoc().title = "CervixData"

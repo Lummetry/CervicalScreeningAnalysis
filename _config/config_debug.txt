@@ -1,0 +1,6 @@
+{
+ "BASE_FOLDER" : ".",
+ "APP_FOLDER" : "_local_cache",
+ "DATA" : "hpv_cnp.csv",
+ "COLUMNS" : "_config/layout.txt"
+}

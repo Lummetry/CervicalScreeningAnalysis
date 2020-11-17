@@ -1,0 +1,34 @@
+ {
+   "COLUMNS" : [
+      {
+        "FIELD" : "LOCALITATE",
+        "TITLE" : "Localitate",
+        "TYPE" : "STR",
+        "DISPLAY" : 1
+      },
+        
+      {
+        "FIELD" : "JUD",
+        "TITLE": "Judet",
+        "TYPE" : "STR",
+        "DISPLAY" : 1
+      },
+      
+      {
+        "FIELD" : "VARSTA",
+        "TITLE": "Varsta",
+        "TYPE" : "INT",
+        "DISPLAY" : 1,
+        "AUTOCALC" : "CNP"
+      },
+    
+      {
+        "FIELD" : "HPV_REZULT",
+        "TITLE": "Rezultat",
+        "TYPE" : "STR",
+        "DISPLAY" : 1
+      }
+    ],
+    
+  "BARS" : ["JUD", "VARSTA"]
+}
