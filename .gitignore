@@ -3,6 +3,8 @@
 
 _local_cache/_logs/
 
+_local_cache/_output/
+
 app/__pycache__/
 
 *.xlsx
