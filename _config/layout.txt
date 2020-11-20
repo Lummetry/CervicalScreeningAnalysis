@@ -4,14 +4,18 @@
         "FIELD" : "LOCALITATE",
         "TITLE" : "Localitate",
         "TYPE" : "STR",
-        "DISPLAY" : 1
+        "DISPLAY" : 1,
+        "CALCOUNT" : 0
       },
         
       {
         "FIELD" : "JUD",
         "TITLE": "Judet",
         "TYPE" : "STR",
-        "DISPLAY" : 1
+        "DISPLAY" : 1,
+        "CALCOUNT" : 1,
+        "FEATURE" : 1,
+        "TARGET_ANALYSIS" : 1
       },
       
       {
@@ -19,16 +23,35 @@
         "TITLE": "Varsta",
         "TYPE" : "INT",
         "DISPLAY" : 1,
-        "AUTOCALC" : "CNP"
+        "AUTOCALC" : "CNP",
+        "CALCOUNT" : 1,
+        "FEATURE" : 1,
+        "TARGET_ANALYSIS" : 1
       },
     
       {
-        "FIELD" : "HPV_REZULT",
+        "FIELD" : "REZULTAT",
         "TITLE": "Rezultat",
         "TYPE" : "STR",
-        "DISPLAY" : 1
+        "DISPLAY" : 1,
+        "TARGET" : 1
+      },
+      
+      {
+        "FIELD" : "DATA_RECOL",
+        "TITLE" : "Data recoltarii",
+        "TYPE"  : "DATE" ,
+        "DISPLAY" : 1,
+        "CALCOUNT" :1,
+        "NEWLINE" : 1,
+        "STRETCH" : 1,
+        "PROGRESS" : 1
       }
     ],
+  
+  "DATE_FIELD" : "DATA_RECOL",
     
-  "BARS" : ["JUD", "VARSTA"]
+  "BARS" : ["JUD", "VARSTA", "DATA_RECOL"],
+  
+  "TARGET_VALUE" : "POZITIV"
 }

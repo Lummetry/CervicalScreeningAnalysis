@@ -23,6 +23,7 @@ Copyright 2019 Lummetry.AI (Knowledge Investment Group SRL). All Rights Reserved
 
 from bokeh.plotting import  output_file, show
 from app.frontend import FrontEnd
+from app.frontend import __VER__ as version
 
 from libraries_pub.logger import Logger
 
@@ -30,6 +31,7 @@ OUTPUT_FILE = 'debug.html'
 
 l = Logger(
   lib_name='CXId',
+  lib_ver=version,
   config_file='_config/config_debug.txt',
   TF_KERAS=False,
   use_colors=True,
@@ -39,6 +41,6 @@ output_file(OUTPUT_FILE, title='CervixData [Debug]')
 l.P("Using DEBUG version '{}'".format(OUTPUT_FILE))
 
 eng = FrontEnd(log=l, debug=True)
-app_layout = eng.get_layout()
+app_layout = eng.create_layout()
 
 show(app_layout)

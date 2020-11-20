@@ -23,18 +23,19 @@ Copyright 2019 Lummetry.AI (Knowledge Investment Group SRL). All Rights Reserved
 
 from bokeh.io import curdoc
 from app.frontend import FrontEnd
-
+from app.frontend import __VER__ as version
 from libraries_pub.logger import Logger
 
 l = Logger(
   lib_name='CXI',
   config_file='_config/config.txt',
+  lib_ver=version,
   TF_KERAS=False,
   use_colors=False,
   )
 
 eng = FrontEnd(log=l, debug=False)
-app_layout = eng.get_layout()
+app_layout = eng.create_layout()
 
 curdoc().add_root(app_layout)
 curdoc().title = "CervixData"
