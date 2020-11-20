@@ -33,12 +33,13 @@ from bokeh.layouts import column, row, layout
 from bokeh.plotting import figure
 from bokeh.models import (
   ColumnDataSource, FileInput, Div, DataTable, TableColumn, FactorRange,
-  Tabs, Panel, LabelSet, Range1d
+  Tabs, Panel, LabelSet, Range1d,
+  LinearColorMapper
   )
 from bokeh.palettes import (
-  Spectral11, Spectral4, Accent4, Pastel1_9, Pastel2_8
+  Spectral11, Spectral4, Accent4, Pastel1_9, Pastel2_8, RdYlGn11
   )
-from bokeh.transform import factor_cmap
+from bokeh.transform import factor_cmap, linear_cmap
 import bokeh as bb
 
 class FrontEnd:
@@ -63,7 +64,7 @@ class FrontEnd:
     self.tabs = {
       'Incarcare si analiza' : self.get_layout_data,
       'Analiza inferentiala' : self.get_layout_infer,
-      'Teste de inferenta'   : self.get_layout_tests
+      # 'Teste de inferenta'   : self.get_layout_tests
       }
     return
 
@@ -528,11 +529,19 @@ class FrontEnd:
             **options,
         ) 
     p.xaxis.major_label_orientation = np.pi/3
+    
+    lin_cmap = linear_cmap(
+      field_name='importance',
+      palette=RdYlGn11, #['green','blue','yellow','purple','red'],
+      low=-1,
+      high=1,
+      )
 
     plot = p.vbar(
       x='variables', 
       top='importance', 
       source=self.importance['DS'], 
+      color=lin_cmap,
       width=0.9
       )
 
