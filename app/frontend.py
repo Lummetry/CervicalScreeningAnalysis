@@ -34,7 +34,7 @@ from bokeh.plotting import figure
 from bokeh.models import (
   ColumnDataSource, FileInput, Div, DataTable, TableColumn, FactorRange,
   Tabs, Panel, LabelSet, Range1d,
-  LinearColorMapper
+  LinearColorMapper, ImageURL
   )
 from bokeh.palettes import (
   Spectral11, Spectral4, Accent4, Pastel1_9, Pastel2_8, RdYlGn11
@@ -44,7 +44,7 @@ import bokeh as bb
 
 class FrontEnd:
   
-  def __init__(self, log, debug=False, width=1000):
+  def __init__(self, log, debug=False, width=1500):
     self.log = log
     self.W = width
     self.debug = debug
@@ -70,11 +70,29 @@ class FrontEnd:
 
   def create_layout(self):
     tabs = []
+    main_title = Div(
+      text='<b>CAVI Medical - Screening Analytics</b>', 
+      width=700, 
+      height=50, 
+      style={
+        'font-size': '40px',
+        'font-family':'Helvetica',
+        'color': '#04537B'
+        },
+      )
+    main_img = Div(text="<img src='img/gts.png'>" , width=150, height=50)
     for name, factory in self.tabs.items():
       tabs.append(Panel(title=name, child=factory()))
     if self.debug:
       self.preprocess_data()
-    return Tabs(tabs=tabs)
+    full_layout = layout(
+      row(
+        main_img,
+        main_title
+        ), 
+      Tabs(tabs=tabs)
+      )
+    return full_layout
 
   
   

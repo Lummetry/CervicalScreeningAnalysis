@@ -1,7 +1,7 @@
 {
  "BASE_FOLDER" : ".",
  "APP_FOLDER" : "_local_cache",
- "DATA1" : "hpv_cnp.csv",
- "DATA" : "pap_cnp.csv",
+ "DATA" : "hpv_cnp.csv",
+ "DATA1" : "pap_cnp.csv",
  "COLUMNS" : "_config/layout.txt"
 }
