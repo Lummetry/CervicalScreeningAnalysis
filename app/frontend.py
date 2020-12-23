@@ -80,7 +80,7 @@ class FrontEnd:
         'color': '#04537B'
         },
       )
-    main_img = Div(text="<img src='img/gts.png'>" , width=150, height=50)
+    main_img = Div(text="<img src='CervicalScreeningAnalysis/static/gts.png'>" , width=150, height=50)
     for name, factory in self.tabs.items():
       tabs.append(Panel(title=name, child=factory()))
     if self.debug:
