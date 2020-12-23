@@ -20,11 +20,14 @@ Copyright 2019 Lummetry.AI (Knowledge Investment Group SRL). All Rights Reserved
 @description: 
 
 """
-
+import os
 from bokeh.io import curdoc
 from app.frontend import FrontEnd
 from app.frontend import __VER__ as version
 from libraries_pub.logger import Logger
+
+ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
+os.chdir(ROOT_PATH)
 
 l = Logger(
   lib_name='CXI',
