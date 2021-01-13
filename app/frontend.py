@@ -206,6 +206,7 @@ class FrontEnd:
       col = dct_col['FIELD']
       if dct_col['TYPE'] == 'STR' and col in self.columns:
         self.log.P("Transforming '{}'...".format(col))
+        self.df[col] = self.df[col].astype(str)
         self.df[col] = self.df[col].apply(str.upper)
     self.log.P("Transfering df {} to cds".format(list(self.df.columns)))
     # check for autocalc CNP
