@@ -4,8 +4,8 @@
  "DATA_" : "hpv_cnp.csv",
  "DATA_" : "pap_cnp.csv",
  "DATA_" : "cedicrom1_hpv.csv",
- "DATA_" : "cedicrom1_pap.csv",
- "DATA" : "cedicrom2_carehpv.csv",
+ "DATA" : "cedicrom1_pap.csv",
+ "DATA_" : "cedicrom2_carehpv.csv",
  "DATA_" : "cedicrom2_hpv.csv",
  "COLUMNS" : "_config/layout.txt"
 }
